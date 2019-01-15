@@ -1,3 +1,12 @@
 .game {
     display: none;
 }
+h1 {
+    text-align: center;
+}
+#startButton{
+    position: absolute;
+    left: 15%;
+    top: 10%;
+    size: 200%;
+}

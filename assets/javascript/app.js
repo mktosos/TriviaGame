@@ -13,7 +13,9 @@ function reveal() {
 //reset of scores **may not need a reset function
 function resetGame() {
     console.log(questions[0]);
+    console.log(answers);
     console.log(answers[0]);
+    console.log(answers[0][0]);
 }
 //arrays for answers and questions with corresponding indexes
 var questions =["Which video game studio created the popular online game Fortnite?",
