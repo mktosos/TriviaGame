@@ -16,10 +16,26 @@
     <div class="game">
         <div class="jumbotron"><h1>Video Game Trivia</h1></div>
     </div>
-
-    <div class="card">
-        <div class="card-body">Basic card</div>
+    <!--card displayed during game-->
+    <div class="card game">
+        <div class="card-body">
+            <div id="timeRemaining">Time Remaining: <span id=timeLeft></span>Seconds</div>
+            <div id=questionDiv></div>
+            <div>
+                <ul id= answerDiv></ul>
+            </div>
+        </div>
     </div>
+    <!--results card displayed after game-->
+    <div class="card game results">
+            <div class="card-body">
+                <div id="timeRemaining">Time Remaining: <span id=timeLeft></span>Seconds</div>
+                <div>Time's Up! Here are your results.</div>
+                <div>Correct Answers: <span id=correctAnswersSpan></span></div>
+                <div>Incorrect Answers:  <span id=incorrectAnswersSpan></span></div>
+                <div>Unanswered: <span  id=unansweredSpan></span></div>
+            </div>
+        </div>
     <script type='text/javascript' src='assets/javascript/app.js'></script>   
 </body>
 </html>

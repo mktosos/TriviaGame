@@ -1,5 +1,7 @@
 # TriviaGame
-License
+Credits The game project student developer is Mike Taniguchi.
+
+git License
 The MIT License (MIT)
 
 Copyright (c) 2019 Mike Taniguchi

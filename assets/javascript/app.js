@@ -12,6 +12,9 @@ function reveal() {
     }
 //reset of scores **may not need a reset function
 function resetGame() {
+    i=0
+    $('#questionDiv').html(questions[i]);
+    $('#answerDiv').html(answers[i]);
     console.log(questions[0]);
     console.log(answers);
     console.log(answers[0]);
@@ -34,6 +37,9 @@ var answers=[['Activision', 'EPIC','Microsoft', 'SONY'],
     ['1985','1994','1999','2002'],
     ['1987','1996','2001','2004']
 ];
+
+
+
 
 
 });
