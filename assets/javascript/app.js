@@ -37,16 +37,13 @@ $( function(){
         console.log(questionsArr[0]);
         console.log(answers[0][0]);
 
-    //game main for loop through array
+    //game main
     function gameStart(){
-        for (let a = 0; a < answers.length; a++) {
-            // if (boo === true){
-                fifteenSeconds();
-                fillCard();
-                console.log(a);
-            // }   
-        }   
+        fifteenSeconds();
+        fillCard();
+        console.log(a);
     }
+
     //15 sec countdown f() 
     function fifteenSeconds(){
         fill=true;
@@ -57,6 +54,8 @@ $( function(){
                  timeLeft++;
                  if (timeLeft>15){
                  clearInterval(timeRemaining);
+                 a=a+1;
+                 gameStart();
                     }
             }
     };
