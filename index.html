@@ -19,11 +19,26 @@
     <!--card displayed during game-->
     <div class="card game">
         <div class="card-body">
-            <div id="timeRemaining">Time Remaining: <span id=timeLeft></span>Seconds</div>
-            <div id=questionDiv></div>
+            <div id="timeRemaining">
+                <h2>Time Remaining: <span id=timeLeft></span>Seconds</h2>
+            </div>
             <div>
                 <ul id= answerDiv></ul>
             </div>
+            <fieldset>
+              <legend><div id=questionDiv></div></legend>
+              <label for="checkbox-1">2 Star</label>
+              <input type="checkbox" name="checkbox-1" id="checkbox-1">
+              <br>
+              <label for="checkbox-2">3 Star</label>
+              <input type="checkbox" name="checkbox-2" id="checkbox-2">
+              <br>
+              <label for="checkbox-3">4 Star</label>
+              <input type="checkbox" name="checkbox-3" id="checkbox-3">
+              <br>
+              <label for="checkbox-4">5 Star</label>
+              <input type="checkbox" name="checkbox-4" id="checkbox-4">
+            </fieldset>
         </div>
     </div>
     <!--results card displayed after game  *** "display:none;"" for now ***-->

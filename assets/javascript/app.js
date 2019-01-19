@@ -44,7 +44,7 @@ $( function(){
         console.log(a);
     }
 
-    //15 sec countdown f() 
+    //15 sec countdown f() and itterator of a
     function fifteenSeconds(){
         fill=true;
         var timeLeft= 0;
@@ -75,5 +75,6 @@ $( function(){
     function timesUp(){
         $(".game").css("display","none"); 
         $(".results").css("display","block"); 
+        clearInterval(timeRemaining);
         }
     });
