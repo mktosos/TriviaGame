@@ -51,9 +51,9 @@ $( function(){
         var timeRemaining = setInterval(timeLeftF, 1000);
              function timeLeftF(){
                  //detectRadio();  
-                 $('#timeLeft').html(5-timeLeft + ' ');
+                 $('#timeLeft').html(10-timeLeft + ' ');
                  timeLeft++;
-                 if (timeLeft>5){
+                 if (timeLeft>10){
                     clearInterval(timeRemaining);
                     getResults();
                     a=a+1;
