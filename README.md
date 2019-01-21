@@ -3,9 +3,11 @@ This trivia game uses timer events, multiple functions, loops, jquery, and DOM m
 
 The game uses timer events to show triva questions about video gaming history that are answered using radio check boxes. Once a user makes a guess or runs out of time, the nex questioned is presented. There is a running tally about correct, wrong and unaswered guesses.
 
+The restart at the end of the game does not work. For some reason having the button actively listening for an .on "click" disrupted the timing of the game. It also seems the game still runs after the game ends as evident in the console.log. Not sure how to stop this. I wa relying on an error to stop the app but then the button wouldn't work.
+
 Credits The game project student developer is Mike Taniguchi.
 
-git License
+ License
 The MIT License (MIT)
 
 Copyright (c) 2019 Mike Taniguchi

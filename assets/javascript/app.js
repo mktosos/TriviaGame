@@ -57,7 +57,6 @@ $( function(){
                     clearInterval(timeRemaining);
                     getResults();
                     a=a+1;
-                    //oneTime==true;
                     gameStart();
                     }
             }
@@ -98,11 +97,17 @@ $( function(){
         } 
         if (pick == answers[a][4]){
             cAnswers=cAnswers+1;
-            console.log('correct pick: '+pick);
-            } else if (pick == undefined){
+            $("#correctSign").css("display","block"); 
+            setTimeout(correctF,1500);
+            function correctF(){
+                $("#correctSign").css("display","none");
+            }
+            } 
+            else if (pick == undefined){
             unAnswered=unAnswered+1;
             //alert("You did not make a selection, press to see answer.");
-            } else {
+            } 
+            else {
             iAnswers=iAnswers+1;
             }
         pick = undefined;    
@@ -114,12 +119,25 @@ $( function(){
     };
 
     function timesUp(){
+        
         $(".game").css("display","none"); 
         $(".results").css("display","block"); 
         $("#correctAnswersSpan").html(cAnswers);
         $("#incorrectAnswersSpan").html(iAnswers);
         $("#unansweredSpan").html(unAnswered);
         clearInterval(timeRemaining);
+        $('#restart').on("click",reStart());
+    };
+
+    function reStart(){
+        pick=undefined;
+        var cAnswers=0;
+        iAnswers=0;
+        unAnswered=0;
+        fill=false;
+        a=0;
+         
+        gameStart()
     };
 
     // function detectRadio(){
