@@ -13,7 +13,7 @@
 <body>
     <button id="startButton">START</button>
 
-    <div class="game">
+    <div class="jumbo">
         <div class="jumbotron"><h1>Video Game Trivia</h1></div>
     </div>
     <!--card displayed during game-->
@@ -25,30 +25,30 @@
             <div>
                 <ul id= answerDiv></ul>
             </div>
-            <fieldset>
+            <fieldset><h4>
               <legend><div id=questionDiv></div></legend>
-              <label for="checkbox-1">2 Star</label>
-              <input type="checkbox" name="checkbox-1" id="checkbox-1">
+              <label for="checkbox-1" id="cb1"></label>
+              <input type="radio" name="checkbox4" id="checkbox-1">
               <br>
-              <label for="checkbox-2">3 Star</label>
-              <input type="checkbox" name="checkbox-2" id="checkbox-2">
+              <label for="checkbox-2" id="cb2"></label>
+              <input type="radio" name="checkbox4" id="checkbox-2">
               <br>
-              <label for="checkbox-3">4 Star</label>
-              <input type="checkbox" name="checkbox-3" id="checkbox-3">
+              <label for="checkbox-3" id="cb3"></label>
+              <input type="radio" name="checkbox4" id="checkbox-3">
               <br>
-              <label for="checkbox-4">5 Star</label>
-              <input type="checkbox" name="checkbox-4" id="checkbox-4">
-            </fieldset>
+              <label for="checkbox-4" id="cb4"></label>
+              <input type="radio" name="checkbox4" id="checkbox-4">
+            </h4></fieldset>
         </div>
     </div>
     <!--results card displayed after game  *** "display:none;"" for now ***-->
     <div class="card results">
         <div class="card-body" >
             <!--div id="timeRemaining">Time Remaining: <span id=timeLeft></span>Seconds</div>-->
-            <div>Time's Up! Here are your results.</div>
-            <div>Correct Answers: <span id=correctAnswersSpan></span></div>
-            <div>Incorrect Answers:  <span id=incorrectAnswersSpan></span></div>
-            <div>Unanswered: <span  id=unansweredSpan></span></div>
+            <div><h2>Time's Up! Here are your results.</h2></div>
+            <div><h3>Correct Answers: <span id=correctAnswersSpan></span></h3></div>
+            <div><h3>Incorrect Answers:  <span id=incorrectAnswersSpan></span></h3></div>
+            <div><h3>Unanswered: <span  id=unansweredSpan></span></h3></div>
         </div>
     </div>
     <script type='text/javascript' src='assets/javascript/app.js'></script>   

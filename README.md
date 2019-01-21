@@ -1,4 +1,8 @@
 # TriviaGame
+This trivia game uses timer events, multiple functions, loops, jquery, and DOM manipulation.
+
+The game uses timer events to show triva questions about video gaming history that are answered using radio check boxes. Once a user makes a guess or runs out of time, the nex questioned is presented. There is a running tally about correct, wrong and unaswered guesses.
+
 Credits The game project student developer is Mike Taniguchi.
 
 git License

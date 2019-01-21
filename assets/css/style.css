@@ -1,6 +1,9 @@
 .game {
     display: none;
 }
+.jumbo {
+    display: none;
+}
 .results {
     display: none; 
 }

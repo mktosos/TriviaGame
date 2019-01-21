@@ -14,13 +14,13 @@ $( function(){
         "In what year did Nintendo release its first game console in North America?",
         "In what year was the Nintendo 64 officially released?"
     ];
-    answers=[['Activision', 'EPIC','Microsoft', 'SONY'],
-        ['Pong','Pacman','Super Mario','Zelda'],
-        ['Atari','Commodore','Coleco','SEGA'],
-        ['US','Korea','China','Japan'],
-        ['1984','1993','1998','2001'],
-        ['1985','1994','1999','2002'],
-        ['1987','1996','2001','2004']
+    answers=[['Activision', 'EPIC','Microsoft', 'SONY','1'],
+        ['Pong','Pacman','Super Mario','Zelda','3'],
+        ['Atari','Commodore','Coleco','SEGA','2'],
+        ['US','Korea','China','Japan','3'],
+        ['1984','1993','1998','2001','1'],
+        ['1985','1994','1999','2002','0'],
+        ['1987','1996','2001','2004','1']
     ];
 
     //Start button to start game and run game f()
@@ -31,17 +31,17 @@ $( function(){
 
      //reveals game after btn click
      function reveal() {
-        $(".game").css("display","block"); 
+        $(".game, .jumbo").css("display","block"); 
         $("#startButton").css("display","none");
     };
-        console.log(questionsArr[0]);
-        console.log(answers[0][0]);
+        //console.log(questionsArr[0]);
+        //console.log(answers[0][0]);
 
     //game main
     function gameStart(){
         fifteenSeconds();
         fillCard();
-        console.log(a);
+        //console.log(a);
     }
 
     //15 sec countdown f() and itterator of a
@@ -52,10 +52,11 @@ $( function(){
              function timeLeftF(){
                  $('#timeLeft').html(15-timeLeft + ' ');
                  timeLeft++;
-                 if (timeLeft>15){
-                 clearInterval(timeRemaining);
-                 a=a+1;
-                 gameStart();
+                 if (timeLeft>5){
+                    clearInterval(timeRemaining);
+                    getResults();
+                    a=a+1;
+                    gameStart();
                     }
             }
     };
@@ -67,14 +68,48 @@ $( function(){
                 timesUp();}
             else{
                 $('#questionDiv').html(questionsArr[a]);
-                $('#answerDiv').html(answers[a]); 
+                $('#cb3').html(answers[a][2]); 
+                $('#cb1').html(answers[a][0]); 
+                $('#cb2').html(answers[a][1]); 
+                $('#cb4').html(answers[a][3]); 
                 fill==false; 
             }
         }   
     }
+    function getResults(){
+        var pick;
+        if (document.getElementById('checkbox-1').checked) {
+            pick = 0;
+        }
+        if (document.getElementById('checkbox-2').checked) {
+            pick = 1;
+        } 
+        if (document.getElementById('checkbox-3').checked) {
+            pick = 2;
+        } 
+        if (document.getElementById('checkbox-4').checked) {
+            pick = 3;
+        } 
+        if (pick == answers[a][4]){
+            cAnswers=cAnswers+1;
+            console.log(pick);
+            } else if (pick == undefined){
+            unAnswered=unAnswered+1;
+            } else {
+            iAnswers=iAnswers+1;
+            }
+    
+    console.log(answers[a][4]);
+    console.log(cAnswers);
+    
+    }
+
     function timesUp(){
         $(".game").css("display","none"); 
         $(".results").css("display","block"); 
+        $("#correctAnswersSpan").html(cAnswers);
+        $("#incorrectAnswersSpan").html(iAnswers);
+        $("#unansweredSpan").html(unAnswered);
         clearInterval(timeRemaining);
         }
     });
