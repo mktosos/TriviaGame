@@ -111,8 +111,13 @@ $( function(){
             iAnswers=iAnswers+1;
             $("#incorrectSign").css("display","block"); 
             setTimeout(incorrectF,1500);
+            $("#correctAnswerSign").css("display","block"); 
+            setTimeout(incorrectF1,1500);
             function incorrectF(){
                 $("#incorrectSign").css("display","none");
+            }
+            function incorrectF1(){
+                $("#correctAnswerSign").css("display","none");
             }
             }
         pick = undefined;    
