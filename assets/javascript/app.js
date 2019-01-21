@@ -4,6 +4,7 @@ $( function(){
     var unAnswered=0;
     var fill=false;
     var a=0;
+    //var oneTime=true;
 
     //arrays for answers and questions with corresponding indexes
     questionsArr =["Which video game studio created the popular online game Fortnite?",
@@ -27,6 +28,7 @@ $( function(){
     $("#startButton").on("click", function(){
         reveal();
         gameStart();
+        
     });
 
      //reveals game after btn click
@@ -34,14 +36,11 @@ $( function(){
         $(".game, .jumbo").css("display","block"); 
         $("#startButton").css("display","none");
     };
-        //console.log(questionsArr[0]);
-        //console.log(answers[0][0]);
 
     //game main
     function gameStart(){
         fifteenSeconds();
         fillCard();
-        //console.log(a);
     }
 
     //15 sec countdown f() and itterator of a
@@ -50,18 +49,25 @@ $( function(){
         var timeLeft= 0;
         var timeRemaining = setInterval(timeLeftF, 1000);
              function timeLeftF(){
+                 //detectRadio();  
                  $('#timeLeft').html(15-timeLeft + ' ');
                  timeLeft++;
+                 
                  if (timeLeft>5){
                     clearInterval(timeRemaining);
                     getResults();
                     a=a+1;
+                    //oneTime==true;
                     gameStart();
                     }
             }
     };
     //fill card with proper text from array
     function fillCard(){
+        $("#checkbox-1").prop('checked', false);
+        $("#checkbox-2").prop('checked', false);
+        $("#checkbox-3").prop('checked', false);
+        $("#checkbox-4").prop('checked', false);
         if(fill===true){
             if(questionsArr.indexOf(questionsArr[a])===-1){
                 clearInterval(timeRemaining);
@@ -75,7 +81,7 @@ $( function(){
                 fill==false; 
             }
         }   
-    }
+    };
     function getResults(){
         var pick;
         if (document.getElementById('checkbox-1').checked) {
@@ -99,10 +105,10 @@ $( function(){
             iAnswers=iAnswers+1;
             }
     
-    console.log(answers[a][4]);
-    console.log(cAnswers);
+        console.log(answers[a][4]);
+        console.log(cAnswers);
     
-    }
+    };
 
     function timesUp(){
         $(".game").css("display","none"); 
@@ -111,5 +117,17 @@ $( function(){
         $("#incorrectAnswersSpan").html(iAnswers);
         $("#unansweredSpan").html(unAnswered);
         clearInterval(timeRemaining);
-        }
-    });
+    };
+
+    // function detectRadio(){
+    //     if (oneTime==true){
+    //         $('#cb').change(function(){ //needs a boolean to only execute once
+    //             oneTime==false;
+    //             alert("change detected");
+                
+    //             // timeLeft= 0;
+    //             // gameStart();
+    //         });
+    //     }
+    // }
+});
