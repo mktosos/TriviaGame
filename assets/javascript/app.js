@@ -4,6 +4,7 @@ $( function(){
     var unAnswered=0;
     var fill=false;
     var a=0;
+    var pick;
     //var oneTime=true;
 
     //arrays for answers and questions with corresponding indexes
@@ -50,9 +51,8 @@ $( function(){
         var timeRemaining = setInterval(timeLeftF, 1000);
              function timeLeftF(){
                  //detectRadio();  
-                 $('#timeLeft').html(15-timeLeft + ' ');
+                 $('#timeLeft').html(5-timeLeft + ' ');
                  timeLeft++;
-                 
                  if (timeLeft>5){
                     clearInterval(timeRemaining);
                     getResults();
@@ -83,7 +83,7 @@ $( function(){
         }   
     };
     function getResults(){
-        var pick;
+        
         if (document.getElementById('checkbox-1').checked) {
             pick = 0;
         }
@@ -98,15 +98,18 @@ $( function(){
         } 
         if (pick == answers[a][4]){
             cAnswers=cAnswers+1;
-            console.log(pick);
+            console.log('correct pick: '+pick);
             } else if (pick == undefined){
             unAnswered=unAnswered+1;
+            //alert("You did not make a selection, press to see answer.");
             } else {
             iAnswers=iAnswers+1;
             }
+        pick = undefined;    
     
-        console.log(answers[a][4]);
-        console.log(cAnswers);
+        console.log('incorrect answers: '+ iAnswers);
+        console.log('correct answers: '+ cAnswers);
+        console.log('unanswered: '+ unAnswered);
     
     };
 
