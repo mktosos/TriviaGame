@@ -109,6 +109,11 @@ $( function(){
             } 
             else {
             iAnswers=iAnswers+1;
+            $("#incorrectSign").css("display","block"); 
+            setTimeout(incorrectF,1500);
+            function incorrectF(){
+                $("#incorrectSign").css("display","none");
+            }
             }
         pick = undefined;    
     
